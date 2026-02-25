@@ -9,7 +9,7 @@ export function Footer() {
           <div className="col-md-4">
             <h5>LIFESTYLE</h5>
             <p>Crafting quality essentials for mindful living.</p>
-          </div>
+          </div>n
 
           <div className="col-md-4">
             <h6>Shop</h6>
