@@ -8,7 +8,7 @@ export function Footer() {
 
           <div className="col-md-4">
             <h5>LIFESTYLE</h5>
-            <p>Crafting quality essentials for mindful living.</p>
+            <p>Crafting quality essentials for mindful living............</p>
           </div>
 
           <div className="col-md-4">
