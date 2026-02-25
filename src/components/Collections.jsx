@@ -11,10 +11,25 @@ export default function Collections() {
       title: "Women's Collection",
       img: "/Womensfashion.jpg",
     },
+     {
+      title: "Kids",
+      img: "/Kids.jpg",
+    },
+   
+    {
+      title: "Shoes",
+      img: "/NewShoes.jpg",
+    },
+    {
+      title: "Electronics",
+      img: "/Electronics.jpg",
+    },
     {
       title: "Accessories",
       img: "/accessories.jpg",
-    },
+    }
+
+   
   ];
 
   return (
