@@ -8,9 +8,11 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 //import  {Project} from './components/project.jsx'
 //import Card from './components/card.jsx'
 import {Home} from './components/home.jsx'
+import Login from './components/Login/Login.jsx';
+import App from './App.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Home />
+    <App />
   </StrictMode>
 )

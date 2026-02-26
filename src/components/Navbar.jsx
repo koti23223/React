@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export function Navbar() {
   return (
@@ -7,10 +8,17 @@ export function Navbar() {
         <div className="container-fluid px-4">
 
           {/* Brand */}
-          <a className="navbar-brand fw-bold fs-4" href="#">LIFESTYLE</a>
+          <Link className="navbar-brand fw-bold fs-4" to="/">
+            LIFESTYLE
+          </Link>
 
           {/* Toggle Button */}
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarContent"
+          >
             <span className="navbar-toggler-icon"></span>
           </button>
 
@@ -19,44 +27,44 @@ export function Navbar() {
             {/* Center Menu */}
             <ul className="navbar-nav mx-auto gap-4">
               <li className="nav-item">
-                <a className="nav-link text-secondary fw-medium" href="#">Shop</a>
+                <Link className="nav-link text-secondary fw-medium" to="/shop">
+                  Shop
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-secondary fw-medium" href="#">Collections</a>
+                <Link className="nav-link text-secondary fw-medium" to="/collections">
+                  Collections
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-secondary fw-medium" href="#">Sustainability</a>
+                <Link className="nav-link text-secondary fw-medium" to="/sustainability">
+                  Sustainability
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-secondary fw-medium" href="#">Journal</a>
+                <Link className="nav-link text-secondary fw-medium" to="/journal">
+                  Journal
+                </Link>
               </li>
             </ul>
 
             {/* Right Section */}
             <div className="d-flex align-items-center gap-3">
+              {/* <button className="btn btn-outline-dark btn-sm px-3">
+                Sign In
+              </button> */}
+              <Link to="/login" className="btn btn-outline-dark btn-sm px-3">Sign In</Link>
 
-              {/* Search */}
-              <div className="input-group d-none d-lg-flex" style={{ width: "260px" }}>
-                <input type="text" className="form-control" placeholder="Search products..."/>
-                <button className="btn btn-secondary">
-                  <i className="bi bi-search text-white"></i>
-                </button>
-              </div>
-
-              {/* Sign In */}
-              <button className="btn btn-outline-dark btn-sm px-3">Sign In</button>
-
-              {/* Cart */}
-              <button className="btn btn-outline-dark btn-sm position-relative">
+              <button className="btn btn-outline-dark btn-sm">
                 <i className="bi bi-cart"></i>
-                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"></span>
               </button>
             </div>
+
           </div>
         </div>
       </nav>
 
-      {/* Spacer for fixed navbar */}
+      {/* Spacer */}
       <div style={{ height: "75px" }}></div>
     </div>
   );
