@@ -4,6 +4,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import Swal from "sweetalert2";
 import "./Login.css";
 
 const Login = () => {
@@ -16,9 +17,7 @@ const Login = () => {
 
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState("");
 
-  // Handle input change
   const handleChange = (e) => {
     setLoginData({
       ...loginData,
@@ -26,11 +25,9 @@ const Login = () => {
     });
   };
 
-  // Handle form submit
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setMessage("");
 
     try {
       const response = await axios.post(
@@ -39,21 +36,45 @@ const Login = () => {
       );
 
       if (response.data === "Login Successful") {
-        setMessage("Login Successful!");
-        
-        // Optional: Save user email in localStorage
+
         localStorage.setItem("userEmail", loginData.email);
 
-        // Redirect after login
-        setTimeout(() => {
-          navigate("/dashboard"); // change route if needed
-        }, 1000);
+        Swal.fire({
+          icon: "success",
+          title: "Login Successful",
+          text: "Welcome back to Lifestyle!",
+          showCancelButton: true,
+          confirmButtonText: "Go to Dashboard",
+          cancelButtonText: "Stay Here",
+          confirmButtonColor: "#0d6efd",
+          cancelButtonColor: "#6c757d",
+          timer: 5000, // auto close after 5 seconds
+          timerProgressBar: true
+        }).then((result) => {
+          if (result.isConfirmed) {
+            navigate("/dashboard");
+          }
+        });
+
       } else {
-        setMessage("Invalid Credentials");
+
+        Swal.fire({
+          icon: "error",
+          title: "Invalid Credentials",
+          text: "Please check your email and password.",
+          confirmButtonColor: "#dc3545"
+        });
+
       }
 
     } catch (error) {
-      setMessage("Server Error. Please try again.");
+
+      Swal.fire({
+        icon: "error",
+        title: "Server Error",
+        text: "Unable to connect to server.",
+      });
+
       console.error(error);
     }
 
@@ -134,12 +155,6 @@ const Login = () => {
             <button type="submit" className="signin-btn" disabled={loading}>
               {loading ? "Signing In..." : "SIGN IN"}
             </button>
-
-            {message && (
-              <p style={{ marginTop: "10px", color: "red" }}>
-                {message}
-              </p>
-            )}
 
             <div className="divider">
               <span>OR CONTINUE WITH</span>
