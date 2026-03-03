@@ -38,6 +38,8 @@ import Signup from "./components/SignUp/signup";
 import MensCollection from "./components/collections/MensCollection";
 import WomensCollection from "./components/collections/WomensCollection";
 import ShoesCollection from "./components/collections/ShoesCollection";
+import ElectronicsCollection from "./components/collections/ElectronicsCollection";
+import AccessoriesCollection from "./components/collections/AccessoriesCollection";
 
 function App() {
   return (
@@ -62,6 +64,15 @@ function App() {
         <Route path="/collections/shoes" 
         element={<ShoesCollection />} 
         />
+
+        <Route path="/collections/electronics" 
+        element={<ElectronicsCollection />}
+         />
+
+         <Route
+          path="/collections/accessories"
+        element={<AccessoriesCollection />}
+          />
         </Routes>
 
       <Footer />
