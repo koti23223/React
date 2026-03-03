@@ -36,6 +36,8 @@ import Login from "./components/Login/Login";
 import Collections from "./components/Collections";
 import Signup from "./components/SignUp/signup";
 import MensCollection from "./components/collections/MensCollection";
+import WomensCollection from "./components/collections/WomensCollection";
+import ShoesCollection from "./components/collections/ShoesCollection";
 
 function App() {
   return (
@@ -51,7 +53,16 @@ function App() {
           path="/collections/mens-shirts"
           element={<MensCollection />}
         />
-      </Routes>
+      
+      <Route
+          path="/collections/womens-dresses"
+          element={<WomensCollection />}
+        />
+
+        <Route path="/collections/shoes" 
+        element={<ShoesCollection />} 
+        />
+        </Routes>
 
       <Footer />
     </>

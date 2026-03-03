@@ -147,6 +147,14 @@ export function Navbar() {
                       Mens Collection
                     </Link>
                   </li>
+                  <li>
+                    <Link 
+                    className="dropdown-item" 
+                    to="/collections/womens-dresses"
+                    >
+                       Womens Collection
+                   </Link>
+                  </li>
 
                   <li>
                     <Link

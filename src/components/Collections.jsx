@@ -78,7 +78,8 @@ export default function Collections() {
     {
       title: "Women's Collection",
       img: "/Womensfashion.jpg",
-      path: "/collections/womens",
+      path: "/collections/womens-dresses",
+     
     },
     {
       title: "Kids",
