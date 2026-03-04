@@ -1,3 +1,4 @@
+//home.jsx
 import React from "react";
 import Collections from "./Collections";
 
